@@ -7,7 +7,7 @@
 
 
 
-#define PECAS_MAX 10
+#define FILAS_MAX 10
 
 typedef struct{
     int id;
@@ -17,7 +17,7 @@ typedef struct{
 
 
 typedef struct{
-    Elemento itens[PECAS_MAX];
+    Elemento itens[FILAS_MAX];
     int inicio;
     int fim;
     int total;
@@ -31,7 +31,7 @@ void inicializarFila(Fila *f) {
 
 }
 int FilaCheia(Fila *f) {
-    return f->total == PECAS_MAX;
+    return f->total == FILAS_MAX;
 }
 
 int FilaVazia(Fila *f) {
@@ -44,7 +44,7 @@ Elemento Retirar(Fila *f){
     Elemento vazio = {-1,""}; // Valor padrão caso a fila esteja vazia
     if(FilaVazia(f)) return vazio; // Evita remoção se estiver vazia
     Elemento e = f->itens[f->inicio]; // Armazena o item a ser removido
-    f->inicio = (f->inicio + 1) % PECAS_MAX; // Atualiza o índice de início
+    f->inicio = (f->inicio + 1) % FILAS_MAX; // Atualiza o índice de início
     f->total--; // Diminui o total
     return e; // Retorna o item removido
 }
@@ -52,7 +52,7 @@ Elemento Retirar(Fila *f){
 void Inserir(Fila *f, Elemento e){
     if(FilaCheia(f)) return;
     f->itens[f->fim] = e;
-    f->fim = (f->fim + 1) % PECAS_MAX;
+    f->fim = (f->fim + 1) % FILAS_MAX;
     f->total++;
 }
 
@@ -60,7 +60,7 @@ void Inserir(Fila *f, Elemento e){
 void exibirFila(Fila*f){
     printf("FIla: \n");
     for(int i=0;i<f->total;i++){
-        int indice = (f->inicio + i) % PECAS_MAX;
+        int indice = (f->inicio + i) % FILAS_MAX;
         printf("Elemento %d: ID: %d, Nome: %s\n", i, f->itens[indice].id, f->itens[indice].nome);
 
     }
@@ -111,7 +111,7 @@ int main(){
                     printf("Fila Cheia.Nao e possivel inserir nova peca \n");
                 } else{
                     Elemento e;
-                    static int proximoID=PECAS_MAX+1; //continuar ids das peças iniciais
+                    static int proximoID=FILAS_MAX+1; //continuar ids das peças iniciais
                     gerarpeca(&e,proximoID++,tipo[rand()%4]);
                     Inserir(&fila,e);
                     printf("Peca inserida: ID: %d, Nome: %s\n",e.id,e.nome);
