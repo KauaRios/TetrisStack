@@ -1,0 +1,86 @@
+Requisitos funcionais
+
+Seu programa em C deverá:
+
+ 
+
+    Inicializar a fila de peças com um número fixo de elementos (por exemplo, 5).
+     
+
+Permitir as seguintes ações:
+ 
+
+    Jogar uma peça, isto é, remove a peça da frente da fila (dequeue).
+     
+    Inserir nova peça ao final da fila (enqueue), se houver espaço.
+     
+    Exibir o estado atual da fila após cada ação, mostrando o tipo (nome) e o id de cada peça.
+
+Atributos das peças
+
+Cada uma possui:
+ 
+
+    nome: caractere que representa o tipo da peça ('I', 'O', 'T', 'L').
+     
+    id: número inteiro único que representa a ordem de criação da peça.
+     
+
+Lembre-se: as peças são geradas automaticamente por uma função chamada gerarPeca.
+
+Exemplo de saída
+
+Confira a seguir seu estado:
+
+Fila de peças
+[T 0] [O 1] [L 2] [I 3] [I 4]
+Tabela: Visualização a fila de peças.
+Curadoria de TI.
+
+Opções de ação:
+
+Código	Ação
+1	Jogar peça (dequeue)
+2	Inserir nova peça (enqueue)
+0	Sair
+Tabela: Comandos disponíveis para manipular a fila de peças.
+Curadoria de TI.
+
+Requisitos não funcionais
+
+Observe os seguintes elementos importantes:
+ 
+
+    Usabilidade: a saída do programa deve ser clara e fácil de entender.
+     
+    Legibilidade: o código deve ser bem organizado, com comentários explicando a lógica utilizada. Para isso, utilize nomes descritivos de variáveis.
+     
+    Documentação: o código deve ser comentado, a fim de explicar o propósito de cada parte.
+
+Simplificações para o nível básico
+
+Veja a seguir as principais considerações:
+ 
+
+    O foco é somente na estrutura de fila.
+     
+    A pilha de peças reservadas não será implementada neste desafio.
+     
+    O menu é simples, com três opções fixas: jogar peça, inserir nova peça e sair. 
+     
+    As peças são geradas de forma automática, e não inseridas manualmente pelo jogador.
+
+Conceitos trabalhados
+
+Os pontos fundamentais são:
+ 
+
+    Fila circular: manipulação eficiente de elementos com reaproveitamento de espaço.
+     
+    Structs e arrays: definição e uso de tipos personalizados para representar peças.
+     
+    Entrada e saída de dados: interação com o jogador via terminal.
+     
+    Funções e modularização: separação de responsabilidades no código.
+     
+    Operadores lógicos e condicionais: controle de fluxo para validação de operações e restrições.
